@@ -33,6 +33,7 @@
             btn_bai1 = new Button();
             bt_Bai5 = new Button();
             bt_Bai6 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btn_bai2
@@ -90,11 +91,23 @@
             bt_Bai6.UseVisualStyleBackColor = true;
             bt_Bai6.Click += bt_Bai6_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(575, 400);
+            button1.Margin = new Padding(4);
+            button1.Name = "button1";
+            button1.Size = new Size(222, 89);
+            button1.TabIndex = 5;
+            button1.Text = "Bài 6";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 562);
+            Controls.Add(button1);
             Controls.Add(bt_Bai6);
             Controls.Add(bt_Bai5);
             Controls.Add(btn_bai1);
@@ -113,5 +126,6 @@
         private Button btn_bai1;
         private Button bt_Bai5;
         private Button bt_Bai6;
+        private Button button1;
     }
 }

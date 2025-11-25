@@ -35,8 +35,14 @@ namespace Nhom9_24520535_24520506_24520507
 
         private void bt_Bai6_Click(object sender, EventArgs e)
         {
-            Bai6 bai6 = new Bai6(); 
+            Bai6 bai6 = new Bai6();
             bai6.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bai7 bai7 = new Bai7();
+            bai7.Show();
         }
     }
 }
