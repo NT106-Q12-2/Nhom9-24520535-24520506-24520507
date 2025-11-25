@@ -26,16 +26,20 @@ namespace Nhom9_24520535_24520506_24520507
             Bai3 bai3 = new Bai3();
             bai3.Show();
         }
+        private void btn_bai4_Click(object sender, EventArgs e)
+        {
+            Bai4 bai4 = new Bai4();
+            bai4.Show();
+        }
 
         private void bt_Bai5_Click(object sender, EventArgs e)
         {
             Bai5 bai5 = new Bai5();
             bai5.Show();
         }
-
         private void bt_Bai6_Click(object sender, EventArgs e)
         {
-            Bai6 bai6 = new Bai6(); 
+            Bai6 bai6 = new Bai6();
             bai6.Show();
         }
     }
