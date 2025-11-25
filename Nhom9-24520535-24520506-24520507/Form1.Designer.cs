@@ -49,7 +49,7 @@
             // 
             // btn_bai3
             // 
-            btn_bai3.Location = new Point(575, 29);
+            btn_bai3.Location = new Point(111, 400);
             btn_bai3.Margin = new Padding(4);
             btn_bai3.Name = "btn_bai3";
             btn_bai3.Size = new Size(222, 89);
@@ -82,7 +82,7 @@
             // 
             // bt_Bai6
             // 
-            bt_Bai6.Location = new Point(98, 400);
+            bt_Bai6.Location = new Point(575, 400);
             bt_Bai6.Margin = new Padding(4);
             bt_Bai6.Name = "bt_Bai6";
             bt_Bai6.Size = new Size(222, 89);
