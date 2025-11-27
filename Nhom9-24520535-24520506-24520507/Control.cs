@@ -26,40 +26,9 @@ namespace Nhom9_24520535_24520506_24520507
             createDoAn.Show();
         }
 
-        public async Task<List<MonAn>> GetMonAnAsync()
+        private void tabPageALL_Click(object sender, EventArgs e)
         {
-            var requestBody = new
-            {
-                page = 1,
-                pageSize = 5
-            };
-            var client = ApiClient.Client;
-            string json = JsonConvert.SerializeObject(requestBody);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync("https://nt106.uitiot.vn/api/v1/monan/all", content);
-            response.EnsureSuccessStatusCode();
-
-            string responseJson = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<List<MonAn>>(responseJson);
 
         }
-
-        //private void HienThiMonAn(List<MonAn> list)
-        //{
-        //    tabPageALL.Controls.Clear();
-        //    tabPageMy.Controls.Clear();
-
-        //    foreach (var item in list)
-        //    {
-
-        //    }
-        //}
-
-        //private void tabPageALL_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }
