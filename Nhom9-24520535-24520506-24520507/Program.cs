@@ -13,5 +13,11 @@ namespace Nhom9_24520535_24520506_24520507
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
+        public static class GlobalApi
+        {
+            public static readonly ApiService Api = new ApiService();
+        }
+
     }
 }

@@ -33,7 +33,7 @@
             btn_bai1 = new Button();
             bt_Bai5 = new Button();
             bt_Bai6 = new Button();
-            button1 = new Button();
+            bt_Bai7 = new Button();
             SuspendLayout();
             // 
             // btn_bai2
@@ -91,23 +91,24 @@
             bt_Bai6.UseVisualStyleBackColor = true;
             bt_Bai6.Click += bt_Bai6_Click;
             // 
-            // button1
+            // bt_Bai7
             // 
-            button1.Location = new Point(575, 400);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(222, 89);
-            button1.TabIndex = 5;
-            button1.Text = "Bài 6";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            bt_Bai7.Location = new Point(575, 400);
+            bt_Bai7.Margin = new Padding(4);
+            bt_Bai7.Name = "bt_Bai7";
+            bt_Bai7.Size = new Size(222, 89);
+            bt_Bai7.TabIndex = 5;
+            bt_Bai7.Text = "Bai 7";
+            bt_Bai7.TextAlign = ContentAlignment.MiddleRight;
+            bt_Bai7.UseVisualStyleBackColor = true;
+            bt_Bai7.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 562);
-            Controls.Add(button1);
+            Controls.Add(bt_Bai7);
             Controls.Add(bt_Bai6);
             Controls.Add(bt_Bai5);
             Controls.Add(btn_bai1);
@@ -126,6 +127,6 @@
         private Button btn_bai1;
         private Button bt_Bai5;
         private Button bt_Bai6;
-        private Button button1;
+        private Button bt_Bai7;
     }
 }

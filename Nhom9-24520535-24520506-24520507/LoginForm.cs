@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Nhom9_24520535_24520506_24520507.Bai7;
+using static Nhom9_24520535_24520506_24520507.Program;
 
 namespace Nhom9_24520535_24520506_24520507
 {
@@ -25,7 +26,11 @@ namespace Nhom9_24520535_24520506_24520507
         {
             try
             {
-                await Main();
+
+                string username = tb_userName.Text;
+                string password = tb_passWord.Text;
+
+                await GlobalApi.Api.LoginUser(username, password);
             }
             catch (HttpRequestException ex)
             {
@@ -34,54 +39,6 @@ namespace Nhom9_24520535_24520506_24520507
             catch (Exception ex) { 
                 MessageBox.Show(ex.Message, "Error");
             }
-        }
-
-        private async Task Main()
-        {
-            var client = ApiClient.Client;
-            var url = "https://nt106.uitiot.vn/auth/token";
-            var username = tb_userName.Text;
-            var password = tb_passWord.Text;
-
-
-            var content = new MultipartFormDataContent
-            {
-                { new StringContent(username), "username" },
-                { new StringContent(password), "password" }
-            };
-            // Xóa Accept cũ để không bị duplicate
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-            new MediaTypeWithQualityHeaderValue("application/json"));
-            var response = await client.PostAsync(url, content);
-            var responseString = await response.Content.ReadAsStringAsync();
-
-            var responseObject = JObject.Parse(responseString);
-
-            if (!response.IsSuccessStatusCode)
-            {
-                MessageBox.Show($"Lỗi Đăng nhập: { response.StatusCode}");
-                return;
-            }
-
-            var tokenType = responseObject["token_type"]?.ToString();
-            var accessToken = responseObject["access_token"]?.ToString();
-            var refreshToken = responseObject["refresh_token"]?.ToString();
-
-            if (string.IsNullOrEmpty(accessToken))
-            {
-                MessageBox.Show("không nhận được token");
-                return;
-            }
-            Global.TokenType = tokenType;
-            Global.AccessToken = accessToken;
-            Global.RefreshToken = refreshToken;
-            client.DefaultRequestHeaders.Authorization = new
-            System.Net.Http.Headers.AuthenticationHeaderValue(tokenType, accessToken);
-            MessageBox.Show("Đăng nhập thành công");
-            Control c = new Control();
-            c.Show();
-            this.Hide();
         }
     }
 }
